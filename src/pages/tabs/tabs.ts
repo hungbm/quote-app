@@ -5,16 +5,16 @@ import {LibraryPage} from '../library/library';
 
 @Component({
     selector: 'page-tabs',
-    template: 
+    template:
     `
-    <ion-tabs>
+    <ion-tabs selectedIndex="1">
         <ion-tab [root]="favoritesPage" tabTitle = "Favorites" tabIcon = "star"> </ion-tab>
         <ion-tab [root]="libraryPage" tabTitle = "Library" tabIcon = "book"> </ion-tab>
     </ion-tabs>
     `
-    
+
 })
-export class TabsPage{ 
+export class TabsPage{
     favoritesPage = FavoritesPage;
     libraryPage = LibraryPage;
 }
