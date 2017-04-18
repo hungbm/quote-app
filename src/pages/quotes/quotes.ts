@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {Quote} from "../../data/quote.interface";
+import {QuotesService} from "../../services/quotes";
 
 
 @Component({
@@ -12,7 +13,10 @@ export class QuotesPage implements
 
   //Store retrieved data
   quoteGroup: {category: string, quotes: Quote[], icon: string};
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private alertCtrl: AlertController,
+              private  quoteService: QuotesService) {
 
   }
 
@@ -39,7 +43,7 @@ export class QuotesPage implements
          {
          text: 'Yes, go ahead',
          handler: () =>{
-           console.log('Ok');
+           this.quoteService.addQuoteToFavorites(selectedQuote);
          }
        }
        ]
