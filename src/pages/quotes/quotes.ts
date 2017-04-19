@@ -50,4 +50,12 @@ export class QuotesPage implements
      });
      alert.present();
   }
+  
+  onRemoveFromFavorite(quote: Quote){
+      
+  }
+  
+  isFavorite(quote: Quote){
+      return this.quoteService.isQuoteFavorite();
+  }
 }

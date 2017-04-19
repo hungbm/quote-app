@@ -1,17 +1,15 @@
 
 <ion-header>
-
   <ion-navbar>
-    <ion-title></ion-title>
+    <ion-title>{{person}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
   <ion-card padding>
     <ion-card-content>
-      AYY
+      {{text}}
     </ion-card-content>
     <ion-row>
       <ion-col>
@@ -19,7 +17,8 @@
           ion-button
           small
           outline
-          color="danger">Unfavorite</button>
+          color="danger"
+          (click)="onClose(true)">Unfavorite</button>
       </ion-col>
     </ion-row>
   </ion-card>
